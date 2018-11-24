@@ -41,6 +41,10 @@ function saveBookMark(e){
     else{
         // get bookmarks from local storage
         var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+        // add book mark to array
+        bookmarks.push(bookMark);
+        localStorage.setItem(bookmarks,JSON.stringify(bookmarks));
+
     }
 
     // prevent from submitting

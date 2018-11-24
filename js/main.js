@@ -17,7 +17,7 @@ function saveBookMark(e){
     }
 
 
-    //local storage only store strings
+    /*/local storage only store strings
 
     localStorage.setItem('test','Treek World');
     console.log(localStorage.getItem('test'));
@@ -25,9 +25,23 @@ function saveBookMark(e){
     localStorage.removeItem('test');
     console.log(localStorage.getItem('test'));
 
-
+*/
   
-    console.log(bookMark);
+
+    // test the bookmarks
+    if(localStorage.getItem('bookmarks')===null){
+        // init array
+        var bookmarks=[];
+        //adds to the array
+        bookmarks.push(bookMark);
+        // then set to the localStorage
+        localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
+    }
+
+    else{
+        // get bookmarks from local storage
+        var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    }
 
     // prevent from submitting
     e.preventDefault();

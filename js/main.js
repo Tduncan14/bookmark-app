@@ -50,3 +50,14 @@ function saveBookMark(e){
     // prevent from submitting
     e.preventDefault();
 }
+
+function fetchBookmarks(){
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    console.log(bookmarks)
+  // Getout put by 
+  
+  var bookmarksResults = document.getElementById('bookmarksResults');
+  
+  //Build output
+
+}

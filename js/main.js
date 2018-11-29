@@ -11,7 +11,7 @@ function saveBookMark(e){
 
     // object that saves to local storage
 
-    var bookMark ={
+    var bookmark = {
         name: siteName,
         url: siteUrl
     }
@@ -33,18 +33,19 @@ function saveBookMark(e){
         // init array
         var bookmarks=[];
         //adds to the array
-        bookmarks.push(bookMark);
+        bookmarks.push(bookmark);
         // then set to the localStorage
         localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
+        console.log(bookmark)
     }
 
     else{
         // get bookmarks from local storage
         var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
         // add book mark to array
-        bookmarks.push(bookMark);
-        localStorage.setItem(bookmarks,JSON.stringify(bookmarks));
-
+        bookmarks.push(bookmark);
+        localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
+          console.log(bookmarks);
     }
 
     // prevent from submitting
@@ -56,7 +57,7 @@ function saveBookMark(e){
 function fetchBookmarks(){
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
   // Getout put by 
-  
+  console.log(bookmarks)
   console.log("works");
   var bookmarksresults = document.getElementById('bookmarksResults');
   
@@ -68,7 +69,12 @@ function fetchBookmarks(){
        let url =bookmarks[i].url;
      
 
-    bookmarksresults.innerHTML = name;
+    bookmarksresults.innerHTML = "<div class='well'>"+
+                                 "<h3>" +name+ "</h3>"+
+                                  "</div>"
+
+
+
    }
   
 }

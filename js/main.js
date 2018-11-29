@@ -62,6 +62,13 @@ function fetchBookmarks(){
   
   //Build output
 
-  bookmarksresults.innerHTML ='tree';
+  bookmarksresults.innerHTML = ''
+   for(var i = 0; i < bookmarks.length;i++){
+       var name = bookmarks[i].name;
+       let url =bookmarks[i].url;
+     
+
+    bookmarksresults.innerHTML = name;
+   }
   
 }
